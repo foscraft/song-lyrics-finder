@@ -34,7 +34,7 @@ def create_connection(song_db_file):
     return conn
 
 
-def create_project(conn, lyric_project):
+def create_lyric_project(conn, lyric_project):
     """
     Create a new project into the projects table
     :param conn:
@@ -82,7 +82,7 @@ def main():
         with conn:
             # creating a new lyric_project
             lyric_project = ('Song lyrics finder with python sqlite3', '2022-04-14', '2022-04-22');
-            project_id = create_project(conn, lyric_project)
+            project_id = create_lyric_project(conn, lyric_project)
 
             # songs
             lyrics = lyrics_finder()
